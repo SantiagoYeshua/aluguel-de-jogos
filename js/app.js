@@ -4,9 +4,12 @@ function alterarStatus(numDoJogo){
     let botao = jogo.querySelector('.dashboard__item__button');
     
     if(imagem.classList.contains('dashboard__item__img--rented')){
-        imagem.classList.remove('dashboard__item__img--rented');
-        botao.classList.remove('dashboard__item__button--return');
-        botao.textContentL = 'Alugar'
+        let mensagemConfirmar = prompt('Dejesa realmente devolver o jogo? 1-Sim 2-Não');
+        if(mensagemConfirmar == 1){
+            imagem.classList.remove('dashboard__item__img--rented');
+            botao.classList.remove('dashboard__item__button--return');
+            botao.textContentL = 'Alugar'
+        }
     } else{
         imagem.classList.add('dashboard__item__img--rented');
         botao.classList.add('dashboard__item__button--return');
